@@ -1,7 +1,7 @@
 {
   "name": "ember-http-mocks-rethinkdb-adapter",
-  "version": "0.1.0",
-  "description": "Adds an db (document store) adapter to http mocks for ember-cli",
+  "version": "0.1.1",
+  "description": "Adds a database adapter for ember-cli http-mocks (dev api w/ JSON document storage)",
   "directories": {
     "doc": "doc",
     "test": "tests"
