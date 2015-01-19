@@ -1,6 +1,6 @@
 // Borrowed from https://github.com/ember-cli/ember-cli/blob/master/blueprints/http-mock/index.js
 
-var Blueprint = require('../../node_modules/ember-cli/lib/models/blueprint');
+var Blueprint = require('../../../ember-cli/lib/models/blueprint');
 
 module.exports = {
   description: 'Generates a mock api endpoint in /api prefix with db storage (RethinkDB).',

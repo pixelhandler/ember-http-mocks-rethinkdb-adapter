@@ -12,13 +12,14 @@ Here is an example request, with a query supported by the [rethinkdb_adapter]
 
 http://localhost:4200/api/posts?limit=10&order=desc&offset=0&sortBy=date&withFields=title
 
-Using this addon requires a local installation of RethinkDB
+Using this addon requires a local installation of RethinkDB and adapter.
 
 For more information on using ember-cli, visit [ember-cli.com].
 
 
 ## Installation
 
+  npm install --save-dev rethinkdb_adapter
   ember install:addon ember-http-mocks-rethinkdb-adapter
 
 
@@ -32,7 +33,8 @@ backed up by a document store db, i.e. RethinkDB
 For example use `ember generate http-mocks-db posts` for a collection of
 post models. And with Ember data return `return this.store.find('post',
 { sortBy: 'date', order: 'desc', limit: 100 })` from your route's model
-hook.
+hook. After creating some records with the db administration tools, then
+use your new endpoint backed by your db at http://localhost:4200/api/posts
 
 After generating a db backed http-mock it may help to restart your app
 with `ember server`.
