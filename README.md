@@ -12,7 +12,7 @@ Here is an example request, with a query supported by the [rethinkdb_adapter]
 
 http://localhost:4200/api/posts?limit=10&order=desc&offset=0&sortBy=date&withFields=title
 
-Using this addon requires you to install RethinkDB locally
+Using this addon requires a local installation of RethinkDB
 
 For more information on using ember-cli, visit [ember-cli.com].
 
@@ -28,6 +28,14 @@ This addon uses Ember CLI generators to create a mock that is
 backed up by a document store db, i.e. RethinkDB
 
   ember generate http-mocks-db `your-resource-name-pluralized`
+
+For example use `ember generate http-mocks-db posts` for a collection of
+post models. And with Ember data return `return this.store.find('post',
+{ sortBy: 'date', order: 'desc', limit: 100 })` from your route's model
+hook.
+
+After generating a db backed http-mock it may help to restart your app
+with `ember server`.
 
 For more info on generators use `ember help generate`
 
@@ -52,7 +60,8 @@ See the [30-second quickstart] for how to start and use the db.
 To start the db (and create a db, if one doesn't exist), in the root of your
 project use the command `rethinkdb`
 
-Once you've started your db try out the [administration-tools]
+Once you've started your db try out the [administration-tools] at
+http://localhost:8080
 
 
 ### Back up your data

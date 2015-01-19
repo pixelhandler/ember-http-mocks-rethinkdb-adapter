@@ -2,7 +2,7 @@ module.exports = function(app) {
   var express = require('express');
   var <%= camelizedModuleName %>Router = express.Router();
 
-  var resource = <%= dasherizedModuleName %>;
+  var resource = '<%= dasherizedModuleName %>';
   var dbSetupConfig = {};
   dbSetupConfig[resource] = 'id';
 
@@ -12,7 +12,8 @@ module.exports = function(app) {
   <%= camelizedModuleName %>Router.get('/', function(req, res) {
     db.findQuery(resource, req.query, function (err, payload) {
       if (err) {
-        res.send(500);
+        console.error(err);
+        res.sendStatus(500);
       } else {
         res.send(payload);
       }
@@ -22,7 +23,8 @@ module.exports = function(app) {
   <%= camelizedModuleName %>Router.post('/', function(req, res) {
     db.createRecord(resource, req.body[resource], function (err, payload) {
       if (err) {
-        res.status(500).end();
+        console.error(err);
+        res.sendStatus(500);
       } else {
         res.status(201).send(payload);
       }
@@ -34,6 +36,7 @@ module.exports = function(app) {
     if (ids.length === 1) {
       db.find(resource, ids[0], function (err, payload) {
         if (err) {
+          console.error(err);
           res.sendStatus(500);
         } else {
           if (payload[resource] !== null) {
@@ -41,6 +44,7 @@ module.exports = function(app) {
           } else {
             db.findBySlug(resource, ids[0], function (err, payload) {
               if (err) {
+                console.error(err);
                 res.sendStatus(500);
               } else {
                 if (payload[resource] !== null && payload[resource] !== void 0) {
@@ -56,7 +60,8 @@ module.exports = function(app) {
     } else if (ids.length > 1) {
       db.findMany(resource, ids, function (err, payload) {
         if (err) {
-          res.send(500);
+          console.error(err);
+          res.sendStatus(500);
         } else {
           res.send(payload);
         }
@@ -67,9 +72,10 @@ module.exports = function(app) {
   <%= camelizedModuleName %>Router.put('/:id', function(req, res) {
     db.updateRecord(resource, req.params.id, req.body[resource], function (err, payload) {
       if (err) {
-        res.status(500).end();
+        console.error(err);
+        res.sendStatus(500);
       } else {
-        res.status(204).end(); // No Content
+        res.sendStatus(204); // No Content
       }
     });
   });
@@ -77,9 +83,10 @@ module.exports = function(app) {
   <%= camelizedModuleName %>Router.delete('/:id', function(req, res) {
     db.deleteRecord(resource, req.params.id, function (err) {
       if (err) {
-        res.status(500).end();
+        console.error(err);
+        res.sendStatus(500);
       } else {
-        res.status(204).end(); // No Content
+        res.sendStatus(204); // No Content
       }
     });
   });
