@@ -8,9 +8,10 @@ a document store using [RethinkDB]. This is useful when you want to
 develop using live data that can be queried, e.g. with parameters
 like `sortBy`, `limit`, `order`, `withFields`, `offset`.
 
-Here is an example request, with a query supported by the [rethinkdb_adapter]
+Below is an example request URI using a query supported by the 
+[rethinkdb_adapter]
 
-http://localhost:4200/api/posts?limit=10&order=desc&offset=0&sortBy=date&withFields=title
+* http://localhost:4200/api/posts?limit=10&order=desc&offset=0&sortBy=date&withFields=title
 
 Using this addon requires a local installation of RethinkDB and adapter.
 
@@ -19,8 +20,8 @@ For more information on using ember-cli, visit [ember-cli.com].
 
 ## Installation
 
-  npm install --save-dev rethinkdb_adapter
-  ember install:addon ember-http-mocks-rethinkdb-adapter
+    npm install --save-dev rethinkdb_adapter
+    ember install:addon ember-http-mocks-rethinkdb-adapter
 
 
 ## Generator: http-mocks-db
@@ -28,7 +29,7 @@ For more information on using ember-cli, visit [ember-cli.com].
 This addon uses Ember CLI generators to create a mock that is
 backed up by a document store db, i.e. RethinkDB
 
-  ember generate http-mocks-db `your-resource-name-pluralized`
+    ember generate http-mocks-db `your-resource-name-pluralized`
 
 For example use `ember generate http-mocks-db posts` for a collection of
 post models. And with Ember data return `return this.store.find('post',
@@ -48,11 +49,10 @@ Here is a [Ten-minute guide] on [RethinkDB]
 
 * [Install options]
 
-For developers on a mac, install with [Homebrew]
+For developers on a mac, install with [Homebrew], here is a link to a 
+[shell script].
 
-  brew update && brew install rethinkdb
-
-Here is a [shell script] if you like.
+    brew update && brew install rethinkdb
 
 
 ### Starting your db
