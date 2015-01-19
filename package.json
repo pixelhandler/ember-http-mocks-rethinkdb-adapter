@@ -1,6 +1,6 @@
 {
   "name": "ember-http-mocks-rethinkdb-adapter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Adds a database adapter for ember-cli http-mocks (dev api w/ JSON document storage)",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,10 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelhandler/ember-http-mocks-rethinkdb-adapter"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
