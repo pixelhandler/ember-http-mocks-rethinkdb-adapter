@@ -34,7 +34,7 @@
     "ember-export-application-global": "^1.0.0",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "rethinkdb_adapter": "^0.1.1"
+    "rethinkdb_adapter": "^0.1.2"
   },
   "keywords": [
     "ember-addon"
