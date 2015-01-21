@@ -7,7 +7,7 @@ module.exports = function(app) {
   dbSetupConfig[resource] = 'id';
 
   var db = require('rethinkdb_adapter');
-  db.setup('http-mocks-db', dbSetupConfig);
+  db.setup('http_mock_db', dbSetupConfig);
 
   <%= camelizedModuleName %>Router.get('/', function(req, res) {
     db.findQuery(resource, req.query, function (err, payload) {
