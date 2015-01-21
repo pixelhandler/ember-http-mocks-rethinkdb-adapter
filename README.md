@@ -17,11 +17,14 @@ Using this addon requires a local installation of RethinkDB and adapter.
 
 For more information on using ember-cli, visit [ember-cli.com].
 
+For an example application using this addon see https://github.com/pixelhandler/ember-slide-deck
+
 
 ## Installation
 
     npm install --save-dev rethinkdb_adapter
     ember install:addon ember-http-mocks-rethinkdb-adapter
+    npm install
 
 
 ## Generator: http-mock-db
