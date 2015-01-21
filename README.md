@@ -24,14 +24,14 @@ For more information on using ember-cli, visit [ember-cli.com].
     ember install:addon ember-http-mocks-rethinkdb-adapter
 
 
-## Generator: http-mocks-db
+## Generator: http-mock-db
 
 This addon uses Ember CLI generators to create a mock that is
 backed up by a document store db, i.e. RethinkDB
 
-    ember generate http-mocks-db `your-resource-name-pluralized`
+    ember generate http-mock-db `your-resource-name-pluralized`
 
-For example use `ember generate http-mocks-db posts` for a collection of
+For example use `ember generate http-mock-db posts` for a collection of
 post models. And with Ember data return `return this.store.find('post',
 { sortBy: 'date', order: 'desc', limit: 100 })` from your route's model
 hook. After creating some records with the db administration tools, then
